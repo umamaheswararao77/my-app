@@ -162,7 +162,7 @@ export default function App() {
             onPress={restart}
             className="bg-indigo-500 px-6 py-3 rounded-full"
           >
-            <Text className="text-white text-lg font-bold">Restart now</Text>
+            <Text className="text-white text-lg font-bold">Restarting</Text>
           </TouchableOpacity>
         </View>
       )}
