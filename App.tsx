@@ -125,7 +125,7 @@ export default function App() {
           onPress={() => setDirection("UP")}
           className="bg-zinc-700 px-6 py-3 rounded mb-2"
         >
-          <Text className="text-white text-center">UP</Text>
+          <Text className="text-white text-center">UP ^</Text>
         </TouchableOpacity>
 
         <View className="flex-row gap-4">
@@ -140,7 +140,7 @@ export default function App() {
             onPress={() => setDirection("RIGHT")}
             className="bg-zinc-700 px-6 py-3 rounded"
           >
-            <Text className="text-white">RIGHT</Text>
+            <Text className="text-white">RIGHT  </Text>
           </TouchableOpacity>
         </View>
 
@@ -148,7 +148,7 @@ export default function App() {
           onPress={() => setDirection("DOWN")}
           className="bg-zinc-700 px-6 py-3 rounded mt-2"
         >
-          <Text className="text-white text-center">DOWN</Text>
+          <Text className="text-white text-center">DOWN v </Text>
         </TouchableOpacity>
       </View>
 
@@ -162,7 +162,7 @@ export default function App() {
             onPress={restart}
             className="bg-indigo-500 px-6 py-3 rounded-full"
           >
-            <Text className="text-white text-lg font-bold">Restart now</Text>
+            <Text className="text-white text-lg font-bold">Restart</Text>
           </TouchableOpacity>
         </View>
       )}
