@@ -1,0 +1,67 @@
+import { useState } from "react";
+import { View, Text, TextInput, TouchableOpacity } from "react-native";
+import { StatusBar } from "expo-status-bar";
+
+interface LoginProps {
+  onLogin: (identifier: string, password: string) => void;
+  onRegister: () => void;
+}
+
+export default function Login({ onLogin, onRegister }: LoginProps) {
+  const [identifier, setIdentifier] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = () => {
+    onLogin(identifier, password);
+  };
+
+  return (
+    <View className="flex-1 bg-white items-center justify-center p-6">
+      <StatusBar style="dark" />
+      <View className="w-full max-w-sm bg-gray-50 p-8 rounded-3xl border border-gray-200 shadow-2xl">
+        <Text className="text-2xl font-bold text-gray-900 mb-2 text-center">
+          Good to see here at
+        </Text>
+        <Text className="text-3xl font-extrabold text-blue-500 mb-8 text-center">
+          School Prop
+        </Text>
+
+        <TextInput
+          placeholder="Name or Email"
+          placeholderTextColor="#6b7280"
+          autoCapitalize="none"
+          value={identifier}
+          onChangeText={setIdentifier}
+          className="w-full bg-white text-gray-900 px-5 py-4 rounded-xl mb-4 border border-gray-300 focus:border-blue-500"
+        />
+
+        <TextInput
+          placeholder="Password"
+          placeholderTextColor="#6b7280"
+          secureTextEntry={true}
+          value={password}
+          onChangeText={setPassword}
+          className="w-full bg-white text-gray-900 px-5 py-4 rounded-xl mb-6 border border-gray-300 focus:border-blue-500"
+        />
+
+        <TouchableOpacity 
+          onPress={handleSubmit}
+          className="w-full bg-blue-500 py-4 rounded-xl active:bg-blue-600 mb-4"
+        >
+          <Text className="text-white text-center font-bold text-lg">
+            Submit
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity 
+          onPress={onRegister}
+          className="mt-4"
+        >
+          <Text className="text-gray-600 text-center">
+            Don't have an account? <Text className="text-blue-500 font-bold">Register</Text>
+          </Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+}
